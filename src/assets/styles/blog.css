@@ -1,0 +1,41 @@
+.blogCard {
+    border: 1px solid black;
+    border-radius: 4px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .blogCardInner {
+        padding: 10px;
+
+        .blogCardText {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
+
+.blogPost {
+    font-size: 16px;
+    line-height: 1.4em;
+    padding: 20px 0;
+
+    .intro {
+        font-weight: 500;
+        padding-bottom: 10px;
+    }
+
+    .keyAreaBody {
+        padding-bottom: 10px;
+    }
+
+    .cta {
+        border: 1px solid black;
+        border-radius: 8px;
+        background-color: lightblue;
+        padding: 20px;
+    }
+}

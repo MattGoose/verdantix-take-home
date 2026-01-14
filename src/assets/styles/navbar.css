@@ -1,0 +1,23 @@
+.navbar {
+    background-color: inherit;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    a {
+        font-weight: 500;
+        color: black;
+        text-decoration: inherit;
+
+        img {
+            width: 40px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        .active {
+            border-bottom: 1px solid black;
+        }
+    }
+}
