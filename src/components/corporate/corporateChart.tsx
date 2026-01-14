@@ -17,12 +17,13 @@ export default function CorporateChart() {
 
     // Build datasets for each scope
     const scopes = ['scope_one', 'scope_two', 'scope_three'] as const
-    const datasets = scopes.map((scope) => ({
+    const datasets = scopes.map((scope, i) => ({
         label: scope,
         data: years.map((year) => {
             const record = filteredRecords.find((rec) => rec.year === year)
             return record ? record[scope] : 0
-        })
+        }),
+        backgroundColor: ['#007bff', '#28a745', '#ffc107'][i],
     }))
 
     const data = {
