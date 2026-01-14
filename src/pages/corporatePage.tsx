@@ -49,7 +49,7 @@ export default function CorporatePage() {
   if (errorMessage) return <Notification message={errorMessage} />
 
   return (
-    <div className="container">
+    <div className="container py-4">
       <CompanySelector />
       <CorporateChart />
     </div>

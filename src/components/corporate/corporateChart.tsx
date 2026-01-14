@@ -32,6 +32,6 @@ export default function CorporateChart() {
     }
 
     return (
-        <Bar data={data} />
+        <Bar className="mt-5" data={data} />
     )
 }

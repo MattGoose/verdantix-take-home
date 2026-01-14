@@ -12,7 +12,7 @@ export default function PostPage() {
     if (!postData) return <Notification message="Post not found!" />
 
     return (
-        <div className="container">
+        <div className="container py-4">
             <article className="blogPost">
                 {postData.intro.map((intro, i) => (
                     <p className="intro" key={i}>{intro}</p>

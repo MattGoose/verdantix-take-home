@@ -32,7 +32,7 @@ export default function BlogPage() {
   if (errorMessage) return <Notification message={errorMessage} />
 
   if (posts) return (
-    <div className="container">
+    <div className="container py-4">
       <div className="row">
         {posts.map((post) => (
           <div key={post?.source_file} className="col-12 col-lg-4 mb-3">
