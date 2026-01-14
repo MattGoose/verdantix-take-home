@@ -9,7 +9,7 @@ export default function CorporateChart() {
     const getYears = useCorporateRecordStore((store) => store.getYears)
     const selectedCompany = useCorporateRecordStore((store) => store.selectedCompany)
 
-    // Get filtered records by company
+    // Get filtered records by company or return all if no company selected
     const filteredRecords = selectedCompany ? records.filter((record) => record.company === selectedCompany) : records
 
     // Get all years for legend

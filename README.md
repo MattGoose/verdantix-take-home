@@ -23,11 +23,13 @@
     - Corporate view is half complete
     - Investor view in incomplete
 - Ensuring I my types were properly structured.
+- Loading and error states on initial file load.
 
 ## Trade-offs
 
 - UI presentation. It's quite simple in layout & presentation. I would have preferred to make the content more visually appealing but I focused on laying content down.
 - Completing the entirety of the task. I priortised finishing individual sections of the task, rather than having all of them partially done.
+- I coupled some state logic with persisted local storage as I didn't have the time to figure out & implement both persisted and non-persisted state.
 
 ## With more time I would...
 
@@ -35,3 +37,5 @@
 - Read more documentation to fully understand the libraries I used. My implementation of them might be shallow due to my limited understanding.
 - Map out path directories aliases for cleaner imports.
 - Utilised a test suite to test my code.
+- Not have the selectedCompany variable live in persisted state (so that the page started from state 0 with each refresh).
+- Make the blog layout page more appealing. As there was only one blog post I didn't want to over-do this and leave myself short on time elsewhere.
