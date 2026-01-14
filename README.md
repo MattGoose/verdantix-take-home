@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+# verdantix-take-home
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to run
 
-Currently, two official plugins are available:
+1. Clone the repo
+2. Open repo in code editor of your choosing (I recommend VS Code)
+3. Run `npm install` from the CLI
+4. Run `npm run dev` from the CLI
+5. Navigate to the indicated localhost
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key decisions & priorites
 
-## React Compiler
+- Translated spec into easiy digestible format for my own understanding (akin to creating projects/tickets within Jira/Linear).
+- Approached the task in the order of the spec (Blog -> Corporate -> Investor).
+- Spread work out between Tuesday & Wednesday:
+    - On Tuesday I did the project setup; installed relevant libraries (TanStack Router, Zustand, Chart.js); read relevant documentation to fill in knowledge gaps; read the data files to understand what they represented; bootsrapped general page layout and navigation using Bootstrap 5 & TanStack Router
+    - On Wednesday I focused on content; built out the blog list; built the blog post page utilising Zustand; built the trend chart using Chart.js and Zustand to track selected company
+- I used TanStack Router and it's popular, well supported, and easy to pick up and use.
+- I used Zustand for simple state management - loading the files into state so I wouldn't have to fetch every time I wanted to use them. I could also easily build getter functions using state data.
+- I used Chart.js as I have (brief) experience using it before.
+- Focused on finishing one section at a time:
+    - Blog is complete
+    - Corporate view is half complete
+    - Investor view in incomplete
+- Ensuring I my types were properly structured.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Trade-offs
 
-## Expanding the ESLint configuration
+- UI presentation. It's quite simple in layout & presentation. I would have preferred to make the content more visually appealing but I focused on laying content down.
+- Completing the entirety of the task. I priortised finishing individual sections of the task, rather than having all of them partially done.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## With more time I would...
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Completing the entire task. I estimate to complete the entire task would take 3 - 5 days.
+- Read more documentation to fully understand the libraries I used. My implementation of them might be shallow due to my limited understanding.
+- Map out path directories aliases for cleaner imports.
+- Utilised a test suite to test my code.
