@@ -1,9 +1,18 @@
-import { Bar } from 'react-chartjs-2'
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
+import { Line } from 'react-chartjs-2'
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    LineElement,
+    PointElement,
+    Title,
+    Tooltip,
+    Legend
+}from 'chart.js'
 import Notification from "@components/notification"
 import { useCorporateRecordStore } from "@stores/corporateStore"
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend)
 
 export default function CorporateChart() {
     const records = useCorporateRecordStore((store) => store.records)
@@ -21,12 +30,13 @@ export default function CorporateChart() {
     // Build datasets for each scope
     const scopes = ['scope_one', 'scope_two', 'scope_three'] as const
     const datasets = scopes.map((scope, i) => ({
-        label: scope,
+        label: scope.replace('_', ' '),
         data: years.map((year) => {
             const record = filteredRecords.find((rec) => rec.year === year)
             return record ? record[scope] : 0
         }),
-        backgroundColor: ['#007bff', '#28a745', '#ffc107'][i],
+        borderColor: ['red', 'blue', 'green'][i],
+        backgroundColor: ['red', 'blue', 'green'][i]
     }))
 
     const data = {
@@ -34,7 +44,15 @@ export default function CorporateChart() {
         datasets: datasets
     }
 
+    const options = {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      }
+
     return (
-        <Bar className="mt-5" data={data} />
+        <Line className="mt-5" data={data} options={options} />
     )
 }
