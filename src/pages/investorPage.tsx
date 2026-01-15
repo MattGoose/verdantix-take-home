@@ -6,7 +6,7 @@ export default function InvestorPage() {
   const records = useCorporateRecordStore((store) => store.records)
 
   const [aggregation, setAggregate] = useState('region')
-  const [year, setYear] = useState(2022)
+  const [year, setYear] = useState(2018)
 
   // Get all years for select
   const years = [...new Set(records.map(record => record.year))]
