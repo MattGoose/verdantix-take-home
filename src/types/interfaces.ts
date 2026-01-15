@@ -1,4 +1,13 @@
-export default interface CorporateRecord {
+export interface BlogPost {
+    call_to_action: string
+    closing: string[]
+    intro: string[]
+    key_areas: KeyArea[]
+    source_file: string
+    type: string
+}
+
+export interface CorporateRecord {
     company: string
     year: number
     scope_one: number
@@ -11,4 +20,9 @@ export default interface CorporateRecord {
     sector: string
     region: string
     ownership: string
+}
+
+export interface KeyArea {
+    body: string
+    title: string
 }

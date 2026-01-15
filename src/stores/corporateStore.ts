@@ -1,10 +1,10 @@
 import { create } from "zustand"
 import { persist } from 'zustand/middleware'
-import type CorporateRecords from "../types/corporateRecord"
+import type { CorporateRecord } from "../types/interfaces"
 
 interface CorporateRecordState {
-    records: CorporateRecords[]
-    setRecords: (records: CorporateRecords[]) => void
+    records: CorporateRecord[]
+    setRecords: (records: CorporateRecord[]) => void
 
     // Computed getters to easily populate dropdowns
     getCompanies: () => string[]
@@ -32,5 +32,8 @@ export const useCorporateRecordStore = create<CorporateRecordState>()(
         selectedCompany: '',
         setSelectedCompany: (company) => set({ selectedCompany: company }),
     }),
-    { name: 'corporate-data-storage' })
+    {
+        partialize: (state) => ({ records: state.records }),
+        name: 'corporate-data-storage'
+    })
 )

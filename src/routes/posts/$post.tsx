@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import PostPage from '../../pages/postPage'
+import PostPage from '@pages/postPage'
 
 export const Route = createFileRoute('/posts/$post')({
   component: Post,

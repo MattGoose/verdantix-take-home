@@ -1,6 +1,6 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 // import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import verdantixLogo from'../assets/verdantix.png'
+import verdantixLogo from'@assets/verdantix.png'
 
 const RootLayout = () => (
   <>

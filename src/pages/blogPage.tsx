@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import BlogCard from "../components/blog/blogCard"
-import Notification from "../components/notification"
-import Spinner from "../components/spinner"
-import { useBlogStore } from '../stores/blogStore'
-import type BlogPost from "../types/blogPost"
+import BlogCard from "@components/blog/blogCard"
+import Notification from "@components/notification"
+import Spinner from "@components/spinner"
+import { useBlogStore } from '@stores/blogStore'
+import type { BlogPost } from "../types/interfaces"
 
 export default function BlogPage() {
   const setPosts = useBlogStore((store) => store.setPosts)

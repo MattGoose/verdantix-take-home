@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import CompanySelector from "../components/corporate/companySelector"
-import CorporateChart from "../components/corporate/corporateChart"
-import Notification from "../components/notification"
-import Spinner from "../components/spinner"
-import { useCorporateRecordStore } from "../stores/corporateStore"
-import type CorporateRecord from "../types/corporateRecord"
+import CompanySelector from "@components/corporate/companySelector"
+import CorporateChart from "@components/corporate/corporateChart"
+import Notification from "@components/notification"
+import Spinner from "@components/spinner"
+import { useCorporateRecordStore } from "@stores/corporateStore"
+import type { CorporateRecord } from "../types/interfaces"
 
 export default function CorporatePage() {
   const setRecords = useCorporateRecordStore((store) => store.setRecords)

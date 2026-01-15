@@ -1,6 +1,7 @@
 import { Bar } from 'react-chartjs-2'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
-import { useCorporateRecordStore } from "../../stores/corporateStore"
+import Notification from "@components/notification"
+import { useCorporateRecordStore } from "@stores/corporateStore"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -10,7 +11,9 @@ export default function CorporateChart() {
     const selectedCompany = useCorporateRecordStore((store) => store.selectedCompany)
 
     // Get filtered records by company or return all if no company selected
-    const filteredRecords = selectedCompany ? records.filter((record) => record.company === selectedCompany) : records
+    const filteredRecords = selectedCompany ? records.filter((record) => record.company === selectedCompany) : null
+
+    if (!filteredRecords) return <Notification message="No company is selected." />
 
     // Get all years for legend
     const years = getYears()

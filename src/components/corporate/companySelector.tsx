@@ -1,4 +1,4 @@
-import { useCorporateRecordStore } from "../../stores/corporateStore"
+import { useCorporateRecordStore } from "@stores/corporateStore"
 
 export default function CompanySelector() {
     const getCompanies = useCorporateRecordStore((store) => store.getCompanies)

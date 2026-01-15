@@ -1,7 +1,7 @@
 import { useParams } from "@tanstack/react-router"
-import KeyArea from "../components/blog/post/keyArea"
-import Notification from "../components/notification"
-import { useBlogStore } from '../stores/blogStore'
+import KeyArea from "@components/blog/post/keyArea"
+import Notification from "@components/notification"
+import { useBlogStore } from '@stores/blogStore'
 
 export default function PostPage() {
     const { post } = useParams({ from: '/posts/$post' })

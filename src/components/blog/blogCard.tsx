@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import type BlogPost from "../../types/blogPost"
+import type { BlogPost } from "../../types/interfaces"
 
 export default function BlogCard({ post }: { post: BlogPost }) {
     return (

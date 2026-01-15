@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import InvestorPage from '../pages/investorPage.tsx'
+import InvestorPage from '@pages/investorPage.tsx'
 
 export const Route = createFileRoute('/investor')({
   component: Investor,

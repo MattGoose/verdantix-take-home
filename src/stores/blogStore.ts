@@ -1,6 +1,6 @@
 import { create } from "zustand"
 import { persist } from 'zustand/middleware'
-import type BlogPost from "../types/blogPost"
+import type { BlogPost } from "../types/interfaces"
 
 interface BlogState {
     posts: BlogPost[]
