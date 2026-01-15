@@ -13,23 +13,37 @@ export default function PostPage() {
 
     return (
         <div className="container py-4">
+            <section className="blogNavigation">
+                <a href="#intro">1. Introduction</a>
+                <a href="#key_areas">2. Key areas</a>
+                <a href="#closing">3. Closing</a>
+            </section>
+
             <article className="blogPost">
-                {postData.intro.map((intro, i) => (
-                    <p className="intro" key={i}>{intro}</p>
-                ))}
+                <section id="intro">
+                    <h2 className="text-decoration-underline">Introduction</h2>
+                    {postData.intro.map((intro, i) => (
+                        <p className="intro" key={i}>{intro}</p>
+                    ))}
+                </section>
 
-                {postData.key_areas.map((key, i) => (
-                    <section key={i}>
-                        <KeyArea
-                            title={key.title}
-                            body={key.body}
-                        />
-                    </section>
-                ))}
+                <section id="key_areas">
+                <h3 className="text-decoration-underline">Key areas</h3>
+                    {postData.key_areas.map((key, i) => (
+                        <section key={i}>
+                            <KeyArea
+                                title={key.title}
+                                body={key.body}
+                            />
+                        </section>
+                    ))}
+                </section>
 
-                {postData.closing.map((closing, i) => (
-                    <p className="intro" key={i}>{closing}</p>
-                ))}
+                <section id="closing">
+                    {postData.closing.map((closing, i) => (
+                        <p className="closing" key={i}><i>{closing}</i></p>
+                    ))}
+                </section>
 
                 <p className="cta"><strong>{postData.call_to_action}</strong></p>
             </article>

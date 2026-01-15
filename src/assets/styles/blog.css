@@ -18,6 +18,19 @@
     }
 }
 
+.blogNavigation {
+    border: 2px solid lightblue;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
 .blogPost {
     font-size: 16px;
     line-height: 1.4em;
@@ -30,6 +43,11 @@
 
     .keyAreaBody {
         padding-bottom: 10px;
+    }
+
+    .closing {
+        font-weight: 600;
+        padding-bottom: 20px;
     }
 
     .cta {
