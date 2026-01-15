@@ -1,6 +1,20 @@
 .notification {
-    border: 1px red solid;
     border-radius: 8px;
-    color: red;
+    font-weight: 500;
     padding: 10px;
+}
+
+.notification-error {
+    border: 1px red solid;
+    color: red;
+}
+
+.notification-info {
+    border: 1px blue solid;
+    color: blue;
+}
+
+.notification-warning {
+    border: 1px yellow solid;
+    color: yellow;
 }

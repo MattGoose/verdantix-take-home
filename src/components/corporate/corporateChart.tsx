@@ -13,7 +13,7 @@ export default function CorporateChart() {
     // Get filtered records by company or return all if no company selected
     const filteredRecords = selectedCompany ? records.filter((record) => record.company === selectedCompany) : null
 
-    if (!filteredRecords) return <Notification message="No company is selected." />
+    if (!filteredRecords) return <Notification message="No company is selected." type="info" />
 
     // Get all years for legend
     const years = getYears()
