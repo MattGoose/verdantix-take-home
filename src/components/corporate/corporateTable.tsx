@@ -24,7 +24,7 @@ export default function CorporateTable() {
                 <h3>{`${ selectedCompany } scope by year`}</h3>
 
                 <input
-                    className="from-control search"
+                    className="bg-transparent from-control search"
                     onChange={(e) => setYear(e.target.value)}
                     placeholder="Search by year..."
                     value={year}

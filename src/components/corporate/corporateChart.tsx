@@ -16,7 +16,6 @@ ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, T
 
 export default function CorporateChart() {
     const records = useCorporateRecordStore((store) => store.records)
-    const getYears = useCorporateRecordStore((store) => store.getYears)
     const selectedCompany = useCorporateRecordStore((store) => store.selectedCompany)
 
     // Get filtered records by company or return all if no company selected
@@ -25,7 +24,7 @@ export default function CorporateChart() {
     if (!filteredRecords) return <Notification message="No company selected for chart view." type="warning" />
 
     // Get all years for legend
-    const years = getYears()
+    const years = [...new Set(records.map(record => record.year))]
 
     // Build datasets for each scope
     const scopes = ['scope_one', 'scope_two', 'scope_three'] as const

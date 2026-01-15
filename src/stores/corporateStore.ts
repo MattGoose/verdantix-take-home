@@ -8,7 +8,6 @@ interface CorporateRecordState {
 
     // Computed getters to easily populate dropdowns
     getCompanies: () => string[]
-    getYears: () => number[]
 
     // Computed filters for page interaction
     selectedCompany: string
@@ -23,10 +22,6 @@ export const useCorporateRecordStore = create<CorporateRecordState>()(
         getCompanies: () => {
             const { records } = get()
             return [...new Set(records.map(record => record.company))]
-        },
-        getYears: () => {
-            const { records } = get()
-            return [...new Set(records.map(record => record.year))]
         },
 
         selectedCompany: '',
