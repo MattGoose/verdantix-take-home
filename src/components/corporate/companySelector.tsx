@@ -9,7 +9,7 @@ export default function CompanySelector() {
 
     return(
         <>
-            <label>
+            <label className="select">
                 Select Company:
                 <select
                     className="form-select"
