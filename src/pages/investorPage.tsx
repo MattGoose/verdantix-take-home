@@ -1,11 +1,12 @@
 import { useState } from "react"
 import InvestorChart from "@components/investor/investorChart"
 import { useCorporateRecordStore } from "@stores/corporateStore"
+import type { AggregationType } from "../types/types"
 
 export default function InvestorPage() {
   const records = useCorporateRecordStore((store) => store.records)
 
-  const [aggregation, setAggregate] = useState('region')
+  const [aggregation, setAggregate] = useState<AggregationType>('region')
   const [year, setYear] = useState(2018)
 
   // Get all years for select
@@ -43,7 +44,7 @@ export default function InvestorPage() {
           <select
             className="form-select"
             id="aggregate-select"
-            onChange={(e) => setAggregate(e.target.value)}
+            onChange={(e) => setAggregate(e.target.value as AggregationType)}
             value={aggregation}
           >
             <option value='region'>Region</option>

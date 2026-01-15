@@ -37,3 +37,5 @@
 - Spent more time understanding the data. I udnerstood it to a baseline, and with some research online I could make sense of the data, but I still felt like I didn't fully grasp it.
 - Looked into hosting, most likely via Netlify.
 - Taken extra care with accessibility. Whilst I used semantic HTML tags well, I still think there's other areas I could have done better with, such as adding alt-text to images, and aria-labels to my tables.
+- Figured out a solution for my types folder alias import. It was conflisting with node_modules type imports.
+- Made corporatePeerComparison a reusable component by passing the comparison metric in as a prop.
