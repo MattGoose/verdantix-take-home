@@ -26,6 +26,7 @@
 - UI presentation. It's quite simple in layout & presentation. I would have preferred to make the content more visually appealing but I focused on laying content down.
 - I didn't build the contextual target indicators for the corporate view. This was because I didn't fully understand what this meant. I could have spent longer to do so, but decided to prioritse completing other parts of the corporate view instead.
 - I didn't build the small summary section for the investor view. This would have been the last task I did, but as I had already spent extra time on the task I decided I was satisfied with what I had done and left it there.
+- I didn't modularise all the investor code due to time constraints.
 
 ## With more time I would...
 
@@ -35,3 +36,4 @@
 - Make the blog layout page more appealing. As there was only one blog post I didn't want to over-do this and leave myself short on time elsewhere.
 - Spent more time understanding the data. I udnerstood it to a baseline, and with some research online I could make sense of the data, but I still felt like I didn't fully grasp it.
 - Looked into hosting, most likely via Netlify.
+- Taken extra care with accessibility. Whilst I used semantic HTML tags well, I still think there's other areas I could have done better with, such as adding alt-text to images, and aria-labels to my tables.
