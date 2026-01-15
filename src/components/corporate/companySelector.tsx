@@ -8,20 +8,19 @@ export default function CompanySelector() {
     const companies = getCompanies()
 
     return(
-        <>
-            <label className="select">
-                Select Company:
-                <select
+        <div className="select">
+            <label htmlFor="company-select">Choose Company:</label>
+            <select
                     className="form-select"
-                    value={selectedCompany}
+                    id="company-select"
                     onChange={(e) => setSelectedCompany(e.target.value)}
+                    value={selectedCompany}
                 >
                     <option disabled hidden value="">Select a company</option>
                     {companies.map((company) => (
                         <option key={company} value={company}>{company}</option>
                     ))}
                 </select>
-            </label>
-        </>
+        </div>
     )
 }
