@@ -9,7 +9,6 @@ import {
     Tooltip,
     Legend
 } from 'chart.js'
-import Notification from "@components/notification"
 import { useCorporateRecordStore } from "@stores/corporateStore"
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend)
@@ -22,8 +21,6 @@ export default function CorporateChart() {
     // Get filtered records by company or return all if no company selected
     const filteredRecords = selectedCompany ? records.filter((record) => record.company === selectedCompany) : null
 
-    if (!filteredRecords) return <Notification message="No company is selected." type="info" />
-
     // Get all years for legend
     const years = getYears()
 
@@ -32,7 +29,7 @@ export default function CorporateChart() {
     const datasets = scopes.map((scope, i) => ({
         label: scope.replace('_', ' '),
         data: years.map((year) => {
-            const record = filteredRecords.find((rec) => rec.year === year)
+            const record = filteredRecords?.find((rec) => rec.year === year)
             return record ? record[scope] : 0
         }),
         borderColor: ['red', 'blue', 'green'][i],
@@ -52,7 +49,7 @@ export default function CorporateChart() {
         },
       }
 
-    return (
+    if (filteredRecords) return (
         <Line className="mt-5" data={data} options={options} />
     )
 }
