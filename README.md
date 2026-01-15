@@ -22,14 +22,11 @@
     - Blog is complete
     - Corporate view is half complete
     - Investor view in incomplete
-- Ensuring I my types were properly structured.
-- Loading and error states on initial file load.
 
 ## Trade-offs
 
 - UI presentation. It's quite simple in layout & presentation. I would have preferred to make the content more visually appealing but I focused on laying content down.
 - Completing the entirety of the task. I priortised finishing individual sections of the task, rather than having all of them partially done.
-- I coupled some state logic with persisted local storage as I didn't have the time to figure out & implement both persisted and non-persisted state.
 
 ## With more time I would...
 
