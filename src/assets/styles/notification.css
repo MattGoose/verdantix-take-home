@@ -1,6 +1,7 @@
 .notification {
     border-radius: 8px;
     font-weight: 500;
+    margin-bottom: 20px;
     padding: 10px;
 }
 

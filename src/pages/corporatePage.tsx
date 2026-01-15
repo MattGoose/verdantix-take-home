@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import CompanySelector from "@components/corporate/companySelector"
 import CorporateChart from "@components/corporate/corporateChart"
+import CorporatePeerComparison from "@components/corporate/corporatePeerComparison"
 import CorporateTable from "@components/corporate/corporateTable"
 import Notification from "@components/notification"
 import Spinner from "@components/spinner"
@@ -27,7 +28,7 @@ export default function CorporatePage() {
           scope_two: datum["Scope 2"],
           scope_three: datum["Scope 3"],
           baseline_year: datum["Baseline Year"],
-          netZero_year: datum["Net Zero Year"],
+          net_zero_year: datum["Net Zero Year"],
           interim_target_year: datum["Interim Target Year"],
           interim_reduction: datum["Interim Reduction %"],
           sector: datum.Sector,
@@ -54,6 +55,7 @@ export default function CorporatePage() {
       <CompanySelector />
       <CorporateChart />
       <CorporateTable />
+      <CorporatePeerComparison />
     </div>
   )
   }

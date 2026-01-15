@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Notification from "@components/notification"
 import { useCorporateRecordStore } from "@stores/corporateStore"
 
 export default function CorporateTable() {
@@ -15,16 +16,20 @@ export default function CorporateTable() {
             .sort((a, b) => a.year - b.year)
         : null
 
-    if (filteredRecords) return (
-        <>
-            <div className="float-end my-4">
+    if (!filteredRecords) return <Notification message="No company selected for table view." type="warning" />
+
+    return (
+        <section className="my-4">
+            <section className="d-flex justify-content-between">
+                <h3>{`${ selectedCompany } scope by year`}</h3>
+
                 <input
                     className="from-control search"
                     onChange={(e) => setYear(e.target.value)}
                     placeholder="Search by year..."
                     value={year}
                 />
-            </div>
+            </section>
 
             <div className="table-responsive mt-4 w-100">
                 <table className="table table-striped table-hover">
@@ -41,14 +46,14 @@ export default function CorporateTable() {
                         {filteredRecords?.map((record) => (
                             <tr key={record.year}>
                                 <td>{record.year}</td>
-                                <td>{record.scope_one.toLocaleString()}</td>
-                                <td>{record.scope_two.toLocaleString()}</td>
-                                <td>{record.scope_three.toLocaleString()}</td>
+                                <td>{record.scope_one ? record.scope_one.toLocaleString() : 'N/A'}</td>
+                                <td>{record.scope_two ? record.scope_two.toLocaleString() : 'N/A'}</td>
+                                <td>{record.scope_three ? record.scope_three.toLocaleString() : 'N/A'}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-        </>
+        </section>
     )
 }
