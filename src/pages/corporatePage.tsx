@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import CompanySelector from "@components/corporate/companySelector"
 import CorporateChart from "@components/corporate/corporateChart"
+import CorporateTable from "@components/corporate/corporateTable"
 import Notification from "@components/notification"
 import Spinner from "@components/spinner"
 import { useCorporateRecordStore } from "@stores/corporateStore"
@@ -52,6 +53,7 @@ export default function CorporatePage() {
     <div className="container py-4">
       <CompanySelector />
       <CorporateChart />
+      <CorporateTable />
     </div>
   )
   }

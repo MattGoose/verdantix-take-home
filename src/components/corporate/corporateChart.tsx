@@ -8,7 +8,7 @@ import {
     Title,
     Tooltip,
     Legend
-}from 'chart.js'
+} from 'chart.js'
 import Notification from "@components/notification"
 import { useCorporateRecordStore } from "@stores/corporateStore"
 
